@@ -50,13 +50,16 @@ jspm_packages
 env/
 /server/__pycache__
 /server/instance
+/server/seed.py
+
 
 # pytest cache
 .pytest_cache
 
 *.db
 */*.db
-app/migrations/versions/*.py
+/server/migrations/versions/*.py
+/server/migrations/__pycache_/*
 
 # Brute force simulation test
 server/brute_force_test.py
