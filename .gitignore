@@ -47,6 +47,7 @@ jspm_packages
 # Virtual env metadata
 .venv
 .env
+env/
 /server/__pycache__
 /server/instance
 /server/requirements.txt
