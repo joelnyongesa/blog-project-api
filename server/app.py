@@ -25,7 +25,7 @@ app.config['SESSION_COOKIE_SECURE'] = True
 app.config['REMEMBER_COOKIE_SECURE'] = True
 app.config['CLOUDINARY_CLOUD_NAME'] = os.environ['CLOUDINARY_CLOUD_NAME']
 app.config['CLOUDINARY_API_KEY'] = os.environ['CLOUDINARY_API_KEY']
-app.config['CLOUDINARY_API_SECRET'] = os.environ['CLOUDINARY_API_KEY']
+app.config['CLOUDINARY_API_SECRET'] = os.environ['CLOUDINARY_API_SECRET']
 
 bcrypt = Bcrypt(app=app)
 
@@ -204,7 +204,7 @@ class UploadImage(Resource):
                 allowed_formats=["jpg", "png", "jpeg", "gif"],
                 transformation=[{"width": 1200, "height": 630, "crop": "limit"}]
             )
-            return jsonify(upload_result), 200
+            return upload_result, 200
         except Exception as e:
             return {'error': str(e)}, 500
 
