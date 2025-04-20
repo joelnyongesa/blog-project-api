@@ -12,6 +12,7 @@ from flask_limiter.util import get_remote_address
 from sqlalchemy.exc import IntegrityError
 import cloudinary
 import cloudinary.uploader
+from flask_cors import CORS
 
 load_dotenv()
 
@@ -34,6 +35,8 @@ migrate = Migrate(app=app, db=db)
 db.init_app(app)
 
 api = Api(app)
+
+CORS(app, origins=["https://blog-project-frontend-omega.vercel.app"])
 
 limiter = Limiter(
     app=app,
