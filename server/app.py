@@ -36,7 +36,7 @@ db.init_app(app)
 
 api = Api(app)
 
-CORS(app, origins=["https://blog-project-frontend-omega.vercel.app"])
+CORS(app, origins=["https://blog-project-frontend-omega.vercel.app"], supports_credentials=True)
 
 limiter = Limiter(
     app=app,
